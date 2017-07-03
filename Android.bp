@@ -27,6 +27,29 @@ cc_binary {
     shared_libs: [
         "libcutils",
         "libutils",
-        "libtinycompress",
+        "libtinycompress_vendor",
+    ],
+}
+
+
+cc_library_shared {
+    name: "libtinycompress_vendor",
+    vendor: true,
+
+    cflags: [
+        "-Wno-macro-redefined",
+        "-USE_VENDOR_EXTN",
+    ],
+    export_include_dirs: ["include"],
+    srcs: [
+        "compress.c",
+        "utils.c",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+    ],
+    header_libs: [
+        "device_kernel_headers",
     ],
 }
