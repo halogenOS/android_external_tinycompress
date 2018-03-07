@@ -36,8 +36,9 @@ LOCAL_CFLAGS := -Wno-macro-redefined
 LOCAL_C_INCLUDES:= $(LOCAL_PATH)/include
 LOCAL_SRC_FILES:= cplay.c
 LOCAL_MODULE := cplay
-LOCAL_SHARED_LIBRARIES:= libcutils libutils libtinycompress_vendor
+LOCAL_SHARED_LIBRARIES:= libcutils libutils libtinycompress
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_EXECUTABLE)
 
